@@ -70,7 +70,7 @@
                             </div>
                             <p class="text-xs text-gray-400 mt-3 text-left pl-2">
                                 *Tips: Semakin detail permintaanmu, semakin akurat kurikulumnya.
-                            </p>
+                            </p> b
                         </form>
                     </div>
 

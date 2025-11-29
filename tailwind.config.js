@@ -1,14 +1,12 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
-import forms from '@tailwindcss/forms';
+import colors from 'tailwindcss/colors'; 
 
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
-         "./resources/**/*.blade.php",
-  "./resources/**/*.js",
-  "./resources/**/*.vue",
+        './resources/views/**/*.blade.php',
     ],
 
     theme: {
@@ -16,8 +14,12 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                // UPDATE DISINI: Ganti jadi 'colors.blue' agar sesuai logo
+                brand: colors.blue, 
+            },
         },
     },
 
-    plugins: [forms],
+    plugins: [require('@tailwindcss/forms')],
 };

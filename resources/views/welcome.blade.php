@@ -34,28 +34,7 @@
         class="absolute top-0 left-0 right-0 -z-10 h-[500px] bg-gradient-to-b from-blue-50/80 to-transparent pointer-events-none">
     </div>
 
-   <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto border-b border-gray-100">
-    <div class="flex items-center gap-1">
-        <img src="{{ asset('img/4x4.png') }}" alt="DevLev AI Logo" class="w-8 h-8 object-contain">
-        <span class="text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500">
-    DevLev AI
-</span>
-        </div>
-        <div class="flex items-center gap-4"> @auth <div class="hidden sm:flex flex-col items-end mr-2"> <span
-                    class="text-sm font-bold text-gray-900">{{ Auth::user()->name }}</span> <span
-                    class="text-xs text-gray-500">{{ Auth::user()->email }}</span> </div>
-            <form method="POST" action="{{ route('logout') }}"> 
-                @csrf <button type="submit"
-                    class="text-sm font-medium text-red-600 hover:text-red-800 border border-red-200 px-4 py-2 rounded-lg hover:bg-red-50 transition">
-        Keluar </button> </form> 
-        @else 
-        <a href="{{ route('login') }}"
-                        class="text-sm font-medium text-gray-600 hover:text-gray-900">Masuk</a> <a
-                        href="{{ route('register') }}"
-                        class="px-5 py-2.5 text-sm font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-500/30">
-                    Daftar </a> @endauth
-        </div>
-    </nav>
+   @include('layouts.navbar')
     <main class="mt-12 sm:mt-16 px-6 mb-20 relative z-10">
         <div class="max-w-5xl mx-auto">
 
@@ -483,13 +462,7 @@
         
     </main>
 
-    <footer class="mt-auto py-8 border-t border-gray-100 bg-white relative z-10">
-        <div class="text-center">
-            <p class="text-gray-500 text-sm font-medium">&copy; {{ date('Y') }} DevLev AI. Developed for Techcomfest
-                2026.</p>
-        </div>
-    </footer>
-
+@include('layouts.footer')
 </body>
 
 </html>

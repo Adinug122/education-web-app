@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SkillPath AI - Bangun Karir Impianmu</title>
+    <title>DevLev AI - Bangun Karir Impianmu</title>
+
+    <link rel="icon" href="{{ asset('img/4x4.png') }}" type="image/jpeg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,10 +34,12 @@
         class="absolute top-0 left-0 right-0 -z-10 h-[500px] bg-gradient-to-b from-blue-50/80 to-transparent pointer-events-none">
     </div>
 
-    <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto border-b border-gray-100">
-        <div class="flex items-center gap-2">
-            <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">S
-            </div> <span class="text-xl font-bold text-gray-800 tracking-tight">SkillPath AI</span>
+   <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto border-b border-gray-100">
+    <div class="flex items-center gap-1">
+        <img src="{{ asset('img/4x4.png') }}" alt="DevLev AI Logo" class="w-8 h-8 object-contain">
+        <span class="text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500">
+    DevLev AI
+</span>
         </div>
         <div class="flex items-center gap-4"> @auth <div class="hidden sm:flex flex-col items-end mr-2"> <span
                     class="text-sm font-bold text-gray-900">{{ Auth::user()->name }}</span> <span
@@ -143,7 +147,7 @@
                             Skill Baru Tanpa <span
                                 class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Bingung
                                 Arah.</span> </h1>
-                        <p class="text-lg sm:text-xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto"> SkillPath AI
+                        <p class="text-lg sm:text-xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto"> DevLev AI
                             membuatkan kurikulum belajar personal untukmu. Hemat waktu riset, fokus belajar, dan capai target
                             karir lebih cepat. </p>
                         <div class="flex justify-center gap-4"> <a href="{{ route('register') }}"
@@ -410,7 +414,7 @@
                 <details
                     class="group bg-gray-50 p-6 rounded-2xl border border-gray-100 cursor-pointer open:bg-white open:shadow-lg open:ring-1 open:ring-blue-100 transition-all duration-300">
                     <summary class="flex justify-between items-center font-bold text-gray-800 list-none">
-                        Apakah SkillPath AI gratis?
+                        Apakah DevLev AI gratis?
                         <span class="transition group-open:rotate-180">
                             <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -419,7 +423,7 @@
                         </span>
                     </summary>
                     <p class="text-gray-600 mt-4 leading-relaxed animate-fade-in-down">
-                        Ya! Saat ini SkillPath AI dapat digunakan sepenuhnya gratis untuk membantu teman-teman belajar
+                        Ya! Saat ini DevLev AI dapat digunakan sepenuhnya gratis untuk membantu teman-teman belajar
                         teknologi baru.
                     </p>
                 </details>
@@ -481,7 +485,7 @@
 
     <footer class="mt-auto py-8 border-t border-gray-100 bg-white relative z-10">
         <div class="text-center">
-            <p class="text-gray-500 text-sm font-medium">&copy; {{ date('Y') }} SkillPath AI. Developed for Techcomfest
+            <p class="text-gray-500 text-sm font-medium">&copy; {{ date('Y') }} DevLev AI. Developed for Techcomfest
                 2026.</p>
         </div>
     </footer>

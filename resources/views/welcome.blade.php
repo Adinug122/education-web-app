@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DevLev AI - Bangun Karir Impianmu</title>
+    <title>Defind - Platform Belajar Berbasis AI</title>
 
     <link rel="icon" href="{{ asset('img/4x4.png') }}" type="image/jpeg">
 
@@ -36,9 +36,9 @@
 
    <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto border-b border-gray-100">
     <div class="flex items-center gap-1">
-        <img src="{{ asset('img/4x4.png') }}" alt="DevLev AI Logo" class="w-8 h-8 object-contain">
+        <img src="{{ asset('img/4x4.png') }}" alt="Defind Logo" class="w-8 h-8 object-contain">
         <span class="text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500">
-    DevLev AI
+    Defind 
 </span>
         </div>
         <div class="flex items-center gap-4"> @auth <div class="hidden sm:flex flex-col items-end mr-2"> <span
@@ -147,7 +147,8 @@
                             Skill Baru Tanpa <span
                                 class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Bingung
                                 Arah.</span> </h1>
-                        <p class="text-lg sm:text-xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto"> DevLev AI
+                        <h2></h2>
+                        <p class="text-lg sm:text-xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto"> Defind AI
                             membuatkan kurikulum belajar personal untukmu. Hemat waktu riset, fokus belajar, dan capai target
                             karir lebih cepat. </p>
                         <div class="flex justify-center gap-4"> <a href="{{ route('register') }}"
@@ -220,7 +221,7 @@
 
         <div id="features" class="py-24 relative">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Kenapa Memilih SkillPath AI?</h2>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Kenapa Memilih Defind?</h2>
                 <p class="text-gray-500 text-lg">Kami menggabungkan kurikulum standar industri dengan personalisasi AI.
                 </p>
             </div>
@@ -414,7 +415,7 @@
                 <details
                     class="group bg-gray-50 p-6 rounded-2xl border border-gray-100 cursor-pointer open:bg-white open:shadow-lg open:ring-1 open:ring-blue-100 transition-all duration-300">
                     <summary class="flex justify-between items-center font-bold text-gray-800 list-none">
-                        Apakah DevLev AI gratis?
+                        Apakah Defind AI gratis?
                         <span class="transition group-open:rotate-180">
                             <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -423,7 +424,7 @@
                         </span>
                     </summary>
                     <p class="text-gray-600 mt-4 leading-relaxed animate-fade-in-down">
-                        Ya! Saat ini DevLev AI dapat digunakan sepenuhnya gratis untuk membantu teman-teman belajar
+                        Ya! Saat ini Defind dapat digunakan sepenuhnya gratis untuk membantu teman-teman belajar
                         teknologi baru.
                     </p>
                 </details>
@@ -485,7 +486,7 @@
 
     <footer class="mt-auto py-8 border-t border-gray-100 bg-white relative z-10">
         <div class="text-center">
-            <p class="text-gray-500 text-sm font-medium">&copy; {{ date('Y') }} DevLev AI. Developed for Techcomfest
+            <p class="text-gray-500 text-sm font-medium">&copy; {{ date('Y') }} Defind AI. Developed for Techcomfest
                 2026.</p>
         </div>
     </footer>

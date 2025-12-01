@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <x-slot name="title">DevLev AI | Register</x-slot>
+    <x-slot name="title">Defind | Register</x-slot>
     <div class="mb-10">
         <h2 class="text-3xl font-bold text-gray-900">Buat Akun Baru 🚀</h2>
         <p class="text-gray-500 mt-2 text-base">Mari daftarkan akun anda disini untuk memulai belajar.</p>

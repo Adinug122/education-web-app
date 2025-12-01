@@ -82,7 +82,7 @@
     </div>
 
     <script>
-        // Saat halaman selesai dimuat sepenuhnya (termasuk gambar & css)
+      
         window.addEventListener('load', function() {
             const preloader = document.getElementById('preloader');
             
@@ -96,7 +96,7 @@
                     preloader.style.display = 'none';
                 }, 700);
                 
-            }, 800); // <-- Anda bisa atur durasi loading palsu disini
+            }, 800); 
         });
     </script>
 </body>

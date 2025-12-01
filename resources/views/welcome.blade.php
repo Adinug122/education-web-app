@@ -34,6 +34,7 @@
         class="absolute top-0 left-0 right-0 -z-10 h-[500px] bg-gradient-to-b from-blue-50/80 to-transparent pointer-events-none">
     </div>
 
+<<<<<<< HEAD
    <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto border-b border-gray-100">
     <div class="flex items-center gap-1">
         <img src="{{ asset('img/4x4.png') }}" alt="Defind Logo" class="w-8 h-8 object-contain">
@@ -56,6 +57,9 @@
                     Daftar </a> @endauth
         </div>
     </nav>
+=======
+   @include('layouts.navbar')
+>>>>>>> c5a14b7f7b2a2a391b4b14c352bca4ff62602301
     <main class="mt-12 sm:mt-16 px-6 mb-20 relative z-10">
         <div class="max-w-5xl mx-auto">
 
@@ -484,6 +488,7 @@
         
     </main>
 
+<<<<<<< HEAD
     <footer class="mt-auto py-8 border-t border-gray-100 bg-white relative z-10">
         <div class="text-center">
             <p class="text-gray-500 text-sm font-medium">&copy; {{ date('Y') }} Defind AI. Developed for Techcomfest
@@ -491,6 +496,9 @@
         </div>
     </footer>
 
+=======
+@include('layouts.footer')
+>>>>>>> c5a14b7f7b2a2a391b4b14c352bca4ff62602301
 </body>
 
 </html>

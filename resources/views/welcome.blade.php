@@ -484,17 +484,10 @@
         
     </main>
 
-<<<<<<< HEAD
-    <footer class="mt-auto py-8 border-t border-gray-100 bg-white relative z-10">
-        <div class="text-center">
-            <p class="text-gray-500 text-sm font-medium">&copy; {{ date('Y') }} Defind AI. Developed for Techcomfest
-                2026.</p>
-        </div>
-    </footer>
 
-=======
+   
 @include('layouts.footer')
->>>>>>> c5a14b7f7b2a2a391b4b14c352bca4ff62602301
+
 </body>
 
 </html>

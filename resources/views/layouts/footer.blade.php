@@ -6,7 +6,7 @@
                  <div class="flex gap-3">
                 <img src="{{ asset('img/4x4.png') }}" alt="logo" class=" bg-white rounded-lg w-10 h-10">
                 <span class="text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-white">
-                    DevLev AI
+                    Define
                 </span>
            
             </div>
@@ -54,7 +54,8 @@
         </div>
 
         <div class="border-t border-brand-800 mt-12 pt-8 text-center text-sm text-brand-300">
-         Copyright DevLev AI. &copy; {{ date('Y') }} 
+        &copy; {{ date('Y') }} Defind AI. Developed for Techcomfest
+                2026
         </div>
     </div>
 </footer>

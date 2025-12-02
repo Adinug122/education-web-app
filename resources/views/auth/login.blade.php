@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <x-slot name="title">DevLev AI | Login</x-slot>
+    <x-slot name="title">Defind | Login</x-slot>
 
     <div class="mb-10">
         <h2 class="text-3xl font-bold text-gray-900">Selamat Datang!</h2>

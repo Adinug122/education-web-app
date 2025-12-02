@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $title ?? config('app.name', 'DevLev AI') }}</title>
+    <title>{{ $title ?? config('app.name', 'Defind') }}</title>
 
     <link rel="icon" href="{{ asset('img/4x4.png') }}" type="image/jpeg">
 
@@ -26,8 +26,8 @@
 
         <div class="relative z-10 text-center animate-pulse">
             <img src="{{ asset('img/splash.jpeg') }}" alt="Logo" class="w-20 h-20 rounded-2xl mx-auto mb-4 shadow-2xl border-4 border-brand-700">
-            <h1 class="text-3xl font-extrabold text-white tracking-tight">DevLev AI</h1>
-            <p class="text-brand-200 text-sm mt-1">Memuat Aplikasi...</p>
+            <h1 class="text-3xl font-extrabold text-white tracking-tight">DEFIND</h1>
+            <p class="text-brand-200 text-sm mt-1">Define Your Future, Find Your Path</p>
         </div>
 
         <div class="mt-8 relative z-10">
@@ -35,7 +35,7 @@
         </div>
 
         <div class="absolute bottom-10 text-brand-300 text-xs font-medium tracking-widest uppercase opacity-60">
-            Powered by DevLev AI
+            Powered by 404 ide not found
         </div>
     </div>
 
@@ -51,21 +51,21 @@
 
             <div class="relative z-10 flex items-center gap-2">
                 <img src="{{ asset('img/4x4.png') }}" alt="Logo" class="w-10 h-10 rounded-lg bg-white p-0.5">
-                <span class="text-2xl font-bold tracking-tight">DevLev AI</span>
+                <span class="text-2xl font-bold tracking-tight">Defind</span>
             </div>
 
             <div class="relative z-10 max-w-lg">
                 <h1 class="text-5xl font-extrabold leading-tight mb-6">
-                    Mulai Karir IT <br>
+                    Mulai Masa Depanmu <br>
                     <span class="text-cyan-300">Tanpa Batas.</span>
                 </h1>
-                <p class="text-brand-100 text-lg leading-relaxed">
-                    "Bergabunglah dengan ribuan developer yang mempercepat karir mereka menggunakan kurikulum berbasis AI kami."
+            <p class="text-brand-100 text-lg leading-relaxed opacity-90">
+                    Kelola perjalanan karir, roadmap belajar, dan portofolio <b>keahlianmu</b> dalam satu platform terintegrasi.
                 </p>
             </div>
 
             <div class="relative z-10 text-sm text-brand-200">
-                &copy; {{ date('Y') }} DevLev AI Inc.
+                &copy; {{ date('Y') }} Defind Inc.
             </div>
         </div>
 
@@ -73,7 +73,7 @@
             <div class="w-full max-w-md">
                 <div class="lg:hidden flex items-center gap-2 mb-8 justify-center">
                     <img src="{{ asset('img/logo.jpg') }}" alt="Logo" class="w-10 h-10 rounded-lg">
-                    <span class="text-2xl font-bold text-gray-900 tracking-tight">DevLev AI</span>
+                    <span class="text-2xl font-bold text-gray-900 tracking-tight">Defind</span>
                 </div>
 
                 {{ $slot }}

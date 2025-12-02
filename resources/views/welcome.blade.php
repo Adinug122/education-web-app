@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DevLev AI - Bangun Karir Impianmu</title>
+    <title>Defind - Platform Belajar Berbasis AI</title>
 
     <link rel="icon" href="{{ asset('img/4x4.png') }}" type="image/jpeg">
 
@@ -34,7 +34,28 @@
         class="absolute top-0 left-0 right-0 -z-10 h-[500px] bg-gradient-to-b from-blue-50/80 to-transparent pointer-events-none">
     </div>
 
-   @include('layouts.navbar')
+   <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto border-b border-gray-100">
+    <div class="flex items-center gap-1">
+        <img src="{{ asset('img/4x4.png') }}" alt="Defind Logo" class="w-8 h-8 object-contain">
+        <span class="text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500">
+    Defind 
+</span>
+        </div>
+        <div class="flex items-center gap-4"> @auth <div class="hidden sm:flex flex-col items-end mr-2"> <span
+                    class="text-sm font-bold text-gray-900">{{ Auth::user()->name }}</span> <span
+                    class="text-xs text-gray-500">{{ Auth::user()->email }}</span> </div>
+            <form method="POST" action="{{ route('logout') }}"> 
+                @csrf <button type="submit"
+                    class="text-sm font-medium text-red-600 hover:text-red-800 border border-red-200 px-4 py-2 rounded-lg hover:bg-red-50 transition">
+        Keluar </button> </form> 
+        @else 
+        <a href="{{ route('login') }}"
+                        class="text-sm font-medium text-gray-600 hover:text-gray-900">Masuk</a> <a
+                        href="{{ route('register') }}"
+                        class="px-5 py-2.5 text-sm font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-500/30">
+                    Daftar </a> @endauth
+        </div>
+    </nav>
     <main class="mt-12 sm:mt-16 px-6 mb-20 relative z-10">
         <div class="max-w-5xl mx-auto">
 
@@ -120,13 +141,14 @@
                     <div class="text-center">
                         <div
                             class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-semibold uppercase tracking-wide mb-6">
-                            <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span> Powered by PNM
+                            <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span> Powered by 404 ide not found - Politeknik Negeri Madiun
                         </div>
                         <h1 class="text-5xl sm:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6"> Belajar
                             Skill Baru Tanpa <span
                                 class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Bingung
                                 Arah.</span> </h1>
-                        <p class="text-lg sm:text-xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto"> DevLev AI
+                        <h2></h2>
+                        <p class="text-lg sm:text-xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto"> Defind AI
                             membuatkan kurikulum belajar personal untukmu. Hemat waktu riset, fokus belajar, dan capai target
                             karir lebih cepat. </p>
                         <div class="flex justify-center gap-4"> <a href="{{ route('register') }}"
@@ -199,7 +221,7 @@
 
         <div id="features" class="py-24 relative">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Kenapa Memilih SkillPath AI?</h2>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Kenapa Memilih Defind?</h2>
                 <p class="text-gray-500 text-lg">Kami menggabungkan kurikulum standar industri dengan personalisasi AI.
                 </p>
             </div>
@@ -393,7 +415,7 @@
                 <details
                     class="group bg-gray-50 p-6 rounded-2xl border border-gray-100 cursor-pointer open:bg-white open:shadow-lg open:ring-1 open:ring-blue-100 transition-all duration-300">
                     <summary class="flex justify-between items-center font-bold text-gray-800 list-none">
-                        Apakah DevLev AI gratis?
+                        Apakah Defind AI gratis?
                         <span class="transition group-open:rotate-180">
                             <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -402,7 +424,7 @@
                         </span>
                     </summary>
                     <p class="text-gray-600 mt-4 leading-relaxed animate-fade-in-down">
-                        Ya! Saat ini DevLev AI dapat digunakan sepenuhnya gratis untuk membantu teman-teman belajar
+                        Ya! Saat ini Defind dapat digunakan sepenuhnya gratis untuk membantu teman-teman belajar
                         teknologi baru.
                     </p>
                 </details>
@@ -462,7 +484,17 @@
         
     </main>
 
+<<<<<<< HEAD
+    <footer class="mt-auto py-8 border-t border-gray-100 bg-white relative z-10">
+        <div class="text-center">
+            <p class="text-gray-500 text-sm font-medium">&copy; {{ date('Y') }} Defind AI. Developed for Techcomfest
+                2026.</p>
+        </div>
+    </footer>
+
+=======
 @include('layouts.footer')
+>>>>>>> c5a14b7f7b2a2a391b4b14c352bca4ff62602301
 </body>
 
 </html>

@@ -28,8 +28,8 @@
                 <h3 class="text-white font-bold text-lg mb-6">Navigasi</h3>
                 <ul class="space-y-4 text-brand-200">
                     <li><a href="#" class="hover:text-white hover:pl-2 transition-all">Beranda</a></li>
-                    <li><a href="#" class="hover:text-white hover:pl-2 transition-all">Fitur Unggulan</a></li>
-                    <li><a href="#" class="hover:text-white hover:pl-2 transition-all">Faq</a></li>
+                    <li><a href="{{route('home')}}#how-it-works" class="hover:text-white hover:pl-2 transition-all">Fitur Unggulan</a></li>
+                    <li><a href="{{route('home')}}#faq" class="hover:text-white hover:pl-2 transition-all">Faq</a></li>
                 </ul>
             </div>
 

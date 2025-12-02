@@ -27,7 +27,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="antialiased bg-white text-gray-900 bg-grid-pattern relative">
+<body class="antialiased bg-white text-gray-900 bg-grid-pattern relative overflow-x-hidden">
 
 
     <div
@@ -408,7 +408,7 @@
 
 
 
-        <div class="py-24 max-w-3xl mx-auto">
+        <div class="py-24 max-w-3xl mx-auto" id="faq">
             <h2 class="text-3xl font-bold text-gray-900 mb-10 text-center">Sering Ditanyakan</h2>
 
             <div class="space-y-4">

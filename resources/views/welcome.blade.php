@@ -34,7 +34,6 @@
         class="absolute top-0 left-0 right-0 -z-10 h-[500px] bg-gradient-to-b from-blue-50/80 to-transparent pointer-events-none">
     </div>
 
-<<<<<<< HEAD
    <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto border-b border-gray-100">
     <div class="flex items-center gap-1">
         <img src="{{ asset('img/4x4.png') }}" alt="Defind Logo" class="w-8 h-8 object-contain">
@@ -57,9 +56,6 @@
                     Daftar </a> @endauth
         </div>
     </nav>
-=======
-   @include('layouts.navbar')
->>>>>>> c5a14b7f7b2a2a391b4b14c352bca4ff62602301
     <main class="mt-12 sm:mt-16 px-6 mb-20 relative z-10">
         <div class="max-w-5xl mx-auto">
 
@@ -145,7 +141,7 @@
                     <div class="text-center">
                         <div
                             class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-semibold uppercase tracking-wide mb-6">
-                            <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span> Powered by PNM
+                            <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span> Powered by 404 ide not found - Politeknik Negeri Madiun
                         </div>
                         <h1 class="text-5xl sm:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6"> Belajar
                             Skill Baru Tanpa <span

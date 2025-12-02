@@ -15,7 +15,7 @@ export default {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
             colors: {
-                // UPDATE DISINI: Ganti jadi 'colors.blue' agar sesuai logo
+                
                 brand: colors.blue, 
             },
         },

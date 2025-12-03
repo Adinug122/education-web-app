@@ -34,26 +34,26 @@
         class="absolute top-0 left-0 right-0 -z-10 h-[500px] bg-gradient-to-b from-blue-50/80 to-transparent pointer-events-none">
     </div>
 
-   <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto border-b border-gray-100">
-    <div class="flex items-center gap-1">
-        <img src="{{ asset('img/4x4.png') }}" alt="Defind Logo" class="w-8 h-8 object-contain">
-        <span class="text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500">
-    Defind 
-</span>
+    <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto border-b border-gray-100">
+        <div class="flex items-center gap-1">
+            <img src="{{ asset('img/4x4.png') }}" alt="Defind Logo" class="w-8 h-8 object-contain">
+            <span
+                class="text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500">
+                Defind
+            </span>
         </div>
         <div class="flex items-center gap-4"> @auth <div class="hidden sm:flex flex-col items-end mr-2"> <span
                     class="text-sm font-bold text-gray-900">{{ Auth::user()->name }}</span> <span
                     class="text-xs text-gray-500">{{ Auth::user()->email }}</span> </div>
-            <form method="POST" action="{{ route('logout') }}"> 
+            <form method="POST" action="{{ route('logout') }}">
                 @csrf <button type="submit"
                     class="text-sm font-medium text-red-600 hover:text-red-800 border border-red-200 px-4 py-2 rounded-lg hover:bg-red-50 transition">
-        Keluar </button> </form> 
-        @else 
-        <a href="{{ route('login') }}"
-                        class="text-sm font-medium text-gray-600 hover:text-gray-900">Masuk</a> <a
-                        href="{{ route('register') }}"
-                        class="px-5 py-2.5 text-sm font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-500/30">
-                    Daftar </a> @endauth
+                    Keluar </button> </form>
+        @else
+                <a href="{{ route('login') }}" class="text-sm font-medium text-gray-600 hover:text-gray-900">Masuk</a> <a
+                    href="{{ route('register') }}"
+                    class="px-5 py-2.5 text-sm font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-500/30">
+            Daftar </a> @endauth
         </div>
     </nav>
     <main class="mt-12 sm:mt-16 px-6 mb-20 relative z-10">
@@ -78,7 +78,8 @@
                             Mau belajar apa hari ini? Ketik skill impianmu, biar AI yang buatkan peta jalannya.
                         </p>
 
-                        <form action="#" method="POST" class="max-w-2xl mx-auto relative group">
+                        <form action="{{ route('generate.roadmap') }}" method="POST"
+                            class="max-w-2xl mx-auto relative group">
                             @csrf
                             <div class="relative transition-all duration-300 transform group-focus-within:scale-[1.01]">
                                 <div
@@ -107,6 +108,9 @@
                         </form>
                     </div>
 
+
+
+
                     <div class="bg-gray-50/80 backdrop-blur p-8 sm:p-10 border-t border-gray-100">
                         <div class="flex items-center justify-between mb-6">
                             <h3 class="font-bold text-gray-800 text-lg flex items-center gap-2">
@@ -122,17 +126,58 @@
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-                            <div
-                                class="border-2 border-dashed border-gray-200 rounded-2xl p-8 text-center hover:border-blue-300 hover:bg-blue-50/30 transition-colors cursor-pointer group">
+                            @forelse ($roadmaps as $item)
+
                                 <div
-                                    class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3 text-gray-400 group-hover:text-blue-500 group-hover:bg-blue-100 transition-colors">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                                    </svg>
+                                    class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition duration-300 flex flex-col h-full">
+
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div
+                                            class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0121 18.382V7.618a1 1 0 01-.553-.894L15 7m0 13V7m0 0L9 4" />
+                                            </svg>
+                                        </div>
+
+                                        <span class="bg-gray-100 text-gray-600 text-xs font-bold px-2 py-1 rounded-lg">
+                                            {{ $loop->iteration }}
+                                        </span>
+                                    </div>
+
+                                    <h3 class="text-lg font-bold text-gray-900 mb-2 leading-tight">
+                                        {{ $item->title }}
+                                    </h3>
+
+                                    <div class=" pt-1 border-t border-gray-50 flex items-center text-sm text-gray-500">
+                                        <svg class="w-4 h-4 mr-1 text-gray-400" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        <span>{{ $item->estimasi }}</span>
+                                    </div>
+
+                                    <a href="{{ route('roadmap.detail',$item->id) }}"
+                                        class="mt-6 text-end text-blue-600 font-semibold text-sm hover:underline">Lihat
+                                        Detail &rarr;</a>
                                 </div>
-                                <p class="text-sm font-medium text-gray-500 group-hover:text-gray-700">Buat Roadmap Baru</p>
-                            </div>
+
+                            @empty
+                                <div
+                                    class="border-2 border-dashed border-gray-200 rounded-2xl p-8 text-center hover:border-blue-300 hover:bg-blue-50/30 transition-colors cursor-pointer group">
+                                    <div
+                                        class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3 text-gray-400 group-hover:text-blue-500 group-hover:bg-blue-100 transition-colors">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                        </svg>
+                                    </div>
+                                    <p class="text-sm font-medium text-gray-500 group-hover:text-gray-700">Buat Roadmap Baru</p>
+                                </div>
+                            @endforelse
+
                         </div>
                     </div>
                 </div>
@@ -141,7 +186,8 @@
                     <div class="text-center">
                         <div
                             class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-semibold uppercase tracking-wide mb-6">
-                            <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span> Powered by 404 ide not found - Politeknik Negeri Madiun
+                            <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span> Powered by 404 ide not found -
+                            Politeknik Negeri Madiun
                         </div>
                         <h1 class="text-5xl sm:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6"> Belajar
                             Skill Baru Tanpa <span
@@ -230,7 +276,8 @@
 
                 <div
                     class="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg  hover:shadow-xl transition duration-300">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+                    <div
+                        class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mx-auto mb-6">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M13 10V3L4 14h7v7l9-11h-7z"></path>
@@ -244,7 +291,8 @@
 
                 <div
                     class="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg  hover:shadow-xl transition duration-300">
-                    <div class="w-12 h-12 bg-teal-100 text-teal-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+                    <div
+                        class="w-12 h-12 bg-teal-100 text-teal-600 rounded-xl flex items-center justify-center mx-auto mb-6">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -370,39 +418,45 @@
                 </div>
             </div>
         </div>
-{{-- cocok --}}
+        {{-- cocok --}}
         <div class="">
-               <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-3xl font-bold text-gray-900 mb-4">Cocok untuk Siapa Saja</h2>
                 <p class="text-gray-500 text-lg">Kami membuat Platform ini cock untuk Siapa Saja
                 </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
                 <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg  hover:shadow-xl transition duration-300"">
-                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300"><img src="{{ asset('img/person.svg') }}" alt="person" class="w-10 h-10"></div>
-                    <h1 class="text-slate-900 font-semibold text-2xl text-center mb-3">Pemula</h1>
-                 <p class="text-center text-gray-500 text-sm leading-tight">
-        Baru mulai belajar? Dapatkan panduan lengkap dari nol hingga mahir.
-    </p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg  hover:shadow-xl transition duration-300"">
-                    <div class="w-14 h-14 bg-pink-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-pink-600 group-hover:text-white transition-colors duration-300"><img src="{{ asset('img/chart.svg') }}" alt="person" class="w-10 h-10 p-2"></div>
-                    <h1 class="text-slate-900 font-semibold text-2xl text-center mb-3">Career Switcher</h1>
-                 <p class="text-center text-gray-500 text-sm leading-tight">
-       Ingin ganti karir? Dapatkan roadmap transisi yang efektif
-    </p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg  hover:shadow-xl transition duration-300"">
-                    <div class="w-14 h-14 bg-teal-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300"><img src="{{ asset('img/rocket.svg') }}" alt="person" class="w-10 h-10 p-2 "></div>
-                    <h1 class="text-slate-900 font-semibold text-2xl text-center mb-3">Profesional</h1>
-                 <p class="text-center text-gray-500 text-sm leading-tight">
-        Upgrade skill dengan roadmap advanced yang terstruktur
-    </p>
-                </div>
-                
+                    <div class=" w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center
+                    mx-auto mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300"><img
+                        src="{{ asset('img/person.svg') }}" alt="person" class="w-10 h-10"></div>
+                <h1 class="text-slate-900 font-semibold text-2xl text-center mb-3">Pemula</h1>
+                <p class="text-center text-gray-500 text-sm leading-tight">
+                    Baru mulai belajar? Dapatkan panduan lengkap dari nol hingga mahir.
+                </p>
             </div>
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg  hover:shadow-xl transition duration-300"">
+                    <div class=" w-14 h-14 bg-pink-100 text-blue-600 rounded-2xl flex items-center justify-center
+                mx-auto mb-6 group-hover:bg-pink-600 group-hover:text-white transition-colors duration-300"><img
+                    src="{{ asset('img/chart.svg') }}" alt="person" class="w-10 h-10 p-2"></div>
+            <h1 class="text-slate-900 font-semibold text-2xl text-center mb-3">Career Switcher</h1>
+            <p class="text-center text-gray-500 text-sm leading-tight">
+                Ingin ganti karir? Dapatkan roadmap transisi yang efektif
+            </p>
         </div>
-        
+        <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg  hover:shadow-xl transition duration-300"">
+                    <div class=" w-14 h-14 bg-teal-100 text-blue-600 rounded-2xl flex items-center justify-center
+            mx-auto mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300"><img
+                src="{{ asset('img/rocket.svg') }}" alt="person" class="w-10 h-10 p-2 "></div>
+        <h1 class="text-slate-900 font-semibold text-2xl text-center mb-3">Profesional</h1>
+        <p class="text-center text-gray-500 text-sm leading-tight">
+            Upgrade skill dengan roadmap advanced yang terstruktur
+        </p>
+        </div>
+
+        </div>
+        </div>
+
 
 
 
@@ -465,28 +519,29 @@
             </div>
         </div>
 
-     
+
         <div class="text-center pb-12 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-[3rem]">
             <div class="p-10 max-w-2xl mx-auto ">
-                     <h3 class="text-3xl font-bold text-white mb-6 ">Siap Memulai Perjalanan Belajarmu?</h3>
-                     <p class="text-base text-white mb-8">Bergabunglah dengan ribuan learner yang sudah menggunakan Devlef untuk mencapai goals mereka</p>
-        <a href="{{ route('register') }}"
-   class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-blue-900 bg-white rounded-full  transition-all shadow-xl hover:shadow-blue-50 hover:-translate-y-1">
-    Buat Akun Sekarang - Gratis
-</a>
+                <h3 class="text-3xl font-bold text-white mb-6 ">Siap Memulai Perjalanan Belajarmu?</h3>
+                <p class="text-base text-white mb-8">Bergabunglah dengan ribuan learner yang sudah menggunakan Devlef
+                    untuk mencapai goals mereka</p>
+                <a href="{{ route('register') }}"
+                    class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-blue-900 bg-white rounded-full  transition-all shadow-xl hover:shadow-blue-50 hover:-translate-y-1">
+                    Buat Akun Sekarang - Gratis
+                </a>
             </div>
-       
-        </div>
-
 
         </div>
 
-        
+
+        </div>
+
+
     </main>
 
 
-   
-@include('layouts.footer')
+
+    @include('layouts.footer')
 
 </body>
 

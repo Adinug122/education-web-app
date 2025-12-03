@@ -1,16 +1,16 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoadmapController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
-
+Route::get('/', [RoadmapController::class,'index'])->name('home');
+Route::post('/generate',[RoadmapController::class,'generate'])->name('generate.roadmap');
+Route::get('/roadmap/{id}', [RoadmapController::class, 'detail'])->name('roadmap.detail');
 Route::get('/roadmap',function(){
     return view('roadmap');
-});
+})->name('roadmap');
 
 
 // route admin

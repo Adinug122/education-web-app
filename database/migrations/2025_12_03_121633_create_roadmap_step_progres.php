@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Prompt;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -10,13 +9,13 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('roadmaps', function (Blueprint $table) {
+        Schema::create('roadmap_step_progres', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('prompt_id')->constrained('prompt')->onDelete('cascade');
-            $table->string('title');
-            $table->string('estimasi')->nullable();
+            $table->boolean('is_completed');
+            $table->foreignId('roadmap_steps_id')->constrained('roadmap_steps')->onDelete('cascade');
+            $table->foreignId('users_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('roadmaps');
+        Schema::dropIfExists('roadmap_step_progres');
     }
 };

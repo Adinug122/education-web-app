@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\RoadmapStepProgres;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
@@ -46,4 +47,21 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+  
+public function completedSteps()
+    {
+        return $this->belongsToMany(
+            RoadmapStep::class,    
+            'roadmap_step_progres',  
+            'users_id',              
+            'roadmap_steps_id'       
+        )
+        ->withPivot('is_completed')  
+        ->withTimestamps();          
+    }
+// Fungsi helper untuk cek status di Blade nanti
+public function hasCompleted($stepId)
+{
+    return $this->completedSteps()->where('roadmap_steps_id', $stepId)->exists();
+}
 }

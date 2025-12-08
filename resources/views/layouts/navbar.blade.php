@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>SkillPath AI - Bangun Karir Impianmu</title>
-   <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto border-b border-gray-100">
+
+   <nav class="flex bg-transparent fixed top-0 inset-x-0 z-50 items-center justify-between px-6 py-4 max-w-7xl mx-auto">
     <div class="flex items-center gap-1">
         <img src="{{ asset('img/4x4.png') }}" alt="DevLev AI Logo" class="w-8 h-8 object-contain">
         <span class="text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500">
@@ -27,4 +21,4 @@
                     Daftar </a> @endauth
         </div>
     </nav>
-</head>
+

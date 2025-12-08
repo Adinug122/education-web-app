@@ -14,11 +14,9 @@ return new class extends Migration
         Schema::create('roadmap_steps', function (Blueprint $table) {
             $table->id();
             $table->foreignId('roadmap_id')->constrained('roadmaps')->onDelete('cascade');
-            $table->integer('step_number');
-            $table->string('topic');
+            $table->integer('order_number');
+            $table->string('title');
             $table->text('description')->nullable();
-            $table->string('search_keyword')->nullable();
-            $table->boolean('is_completed')->default(false);
             $table->timestamps();
         });
     }

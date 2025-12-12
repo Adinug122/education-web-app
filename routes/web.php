@@ -10,17 +10,19 @@ Route::get('/', [RoadmapController::class, 'index'])->name('home');
 
 
 Route::middleware(['role:admin'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-    Route::get('/reports', [ReportController::class, 'index'])->name('admin.reports.index');
+      Route::get('/dashboard', [RoadmapController::class, 'dashboard'])
+      ->name('dashboard');
+    Route::get('/reports', [ReportController::class, 'index'])->name('admin.reports');
     Route::delete('/reports/{id}', [ReportController::class, 'destroy'])->name('reports.destroy');
     Route::put('/reports/{id}', [ReportController::class, 'update'])->name('admin.reports.update');
     Route::get('/user', [UserController::class, 'index'])->name('user');
+    Route::put('/reports/{id}/fix-link', [ReportController::class, 'fixLink'])
+        ->name('admin.reports.fixLink');
+   Route::delete('/user/{id}', [UserController::class, 'destroy'])
+    ->name('user.destroy');
 });
 
 Route::middleware('auth')->group(function () {
-
     Route::post('/roadmap/step/{id}/complete', [RoadmapController::class, 'toggleStep'])
         ->name('roadmap.step.complete');
 

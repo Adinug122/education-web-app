@@ -24,7 +24,7 @@
                </div>
               
 <div class="flex gap-3 pt-2">
-        <a href="{{ url()->previous() }}" class="w-1/2 text-center px-4 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition">
+        <a href="{{route('roadmap.detail', $resource->step->roadmap_id) }}" class="w-1/2 text-center px-4 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition">
             Batal
         </a>
         
@@ -47,5 +47,6 @@
         });
     });
 </script>
+
 @endif
 </x-userlayouts>

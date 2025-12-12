@@ -1,8 +1,3 @@
-
- 
-
-   
-
 <x-userlayouts>
        <title>{{ $roadmap->title }}</title>
 <div class="bg-gray-50 p-8 border-t border-gray-100">
@@ -82,20 +77,6 @@
                             <h1 class="font-semibold text-gray-800">{{ $step->title }}</h1>
                         
                         </div>
-                          @foreach ($step->resources as $res)
-
-                          <?php
-                          $res = $res;
-                          ?>
-                              @endforeach
-                                  <a class="ml-auto" href="{{ route('report.create',$res->id) }}">
-                                      <svg class="ml-auto size-6 hover:text-red-500 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5" />
-                        </svg>
-
-                        </a>
-                    
-              
              
                     </div>
 
@@ -107,11 +88,24 @@
 
                     <div class="grid grid-cols-2 gap-3 mt-3">
                         @foreach ($step->resources as $res)
-                        <a href="{{ $res->url }}" 
-                           target="_blank"
-                           class="bg-gray-100 rounded-lg px-3 py-2 hover:bg-gray-200">
-                           {{ $res->title }}
-                        </a>
+                        
+                       <div class="flex items-center justify-between bg-gray-100 rounded-lg px-3 py-2 hover:bg-gray-200 transition group">
+            
+            <a href="{{ $res->url }}" 
+               target="_blank"
+               class="flex-1 font-medium text-gray-700 hover:text-blue-600 truncate mr-2">
+               {{ $res->title }}
+            </a>
+
+            <a href="{{ route('report.create', $res->id) }}" 
+               title="Laporkan Masalah"
+               class="flex-shrink-0 text-gray-400 hover:text-red-500 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#a5a3ff"><path d="M480-280q17 0 28.5-11.5T520-320q0-17-11.5-28.5T480-360q-17 0-28.5 
+                    11.5T440-320q0
+                     17 11.5 28.5T480-280Zm-40-160h80v-240h-80v240ZM330-120 120-330v-300l210-210h300l210 210v300L630-120H330Zm34-80h232l164-164v-232L596-760H364L200-596v232l164 164Zm116-280Z"/></svg>
+            </a>
+
+        </div>
                         @endforeach
                     </div>
 @php

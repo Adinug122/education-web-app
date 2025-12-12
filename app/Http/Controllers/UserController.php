@@ -11,4 +11,12 @@ class UserController extends Controller
 
         return view('user',compact('user'));
     }
+
+    public function destroy($id){
+        $user = User::findOrFail($id);
+
+        $user->delete();
+
+        return redirect()->route('user')->with('success','Data berhasil dihapus');
+    }
 }

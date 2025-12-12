@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Prompt;
+use App\Models\Report;
 use App\Models\Roadmap;
 use App\Models\RoadmapResource;
 use App\Models\RoadmapStep;
+use App\Models\RoadmapStepProgres;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
@@ -25,6 +28,38 @@ class RoadmapController extends Controller
     }
 
     return $url;
+}
+
+public function dashboard()
+{
+    $roadmaps = Roadmap::count();
+    $totalUser = User::count();
+    $totalMateri = RoadmapResource::count();
+    $laporan = Report::count();
+
+   $roadmapPerMonth = Roadmap::selectRaw('MONTH(created_at) as month, COUNT(*) as total')
+    ->groupBy('month')
+    ->orderBy('month')
+    ->get();
+    $laporanStatus = Report::selectRaw('status,COUNT(*) as total')->groupBy('status')->get();
+    $resourceType = RoadmapResource::selectRaw('type, COUNT(*) as total')
+    ->groupBy('type')
+    ->get();
+
+    $progress = RoadmapStepProgres::selectRaw('is_completed, COUNT(*) as total')
+    ->groupBy('is_completed')
+    ->get();
+
+    return view('dashboard',
+    compact('laporan',
+    'roadmaps',
+    'totalMateri',
+    'totalUser',
+    'roadmapPerMonth',
+    'laporanStatus',
+    'resourceType',
+    'progress'
+    ));
 }
 
     public function index()
@@ -52,6 +87,8 @@ class RoadmapController extends Controller
 
         return view('roadmap', compact('roadmap','completedCount'));
     }
+
+ 
 
     public function generate(Request $request)
     {
@@ -150,7 +187,7 @@ Prompt user: '.$promptText,
             }
         }
 
-        return redirect()->route('home')
+        return redirect()->route('roadmap.detail',$roadmap->id)
             ->with('success', 'Roadmap berhasil dibuat!');
     }
 

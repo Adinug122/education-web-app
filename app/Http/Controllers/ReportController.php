@@ -13,13 +13,18 @@ class ReportController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $reports = Report::with(['user','roadmap_resource'])
+        $reports = Report::with(['user','resource'])
         ->where('status','pending')
         ->latest()
         ->paginate(10);
-        return view('admin.reports.index', compact('reports'));
+
+        $editing = null;
+        if($request->has('edit_id')){
+            $editing = Report::with('resource')->find($request->edit_id);
+        }
+        return view('admin.reports', compact('reports','editing'));
     }
 
     /**
@@ -55,12 +60,21 @@ class ReportController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
+    public function fixLink(Request $request ,$id){
+        $request->validate([
+             'new_url' => 'required|url'
+        ]);
+        $reports = Report::with('resource')->findOrFail($id);
+        
+        $reports->resource->update([
+            'url' => $request->new_url
+        ]);
+
+        $reports->update([
+        'status' => 'resolved'
+    ]);
+
+    return redirect()->route('admin.reports')->with("success","berhasil");
     }
 
     /**

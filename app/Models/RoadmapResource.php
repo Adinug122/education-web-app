@@ -12,7 +12,7 @@ class RoadmapResource extends Model
     protected $fillable = ['id','title','url','type','roadmap_steps_id'];
 
     function step(){
-        return $this->belongsTo(RoadmapStep::class);
+        return $this->belongsTo(RoadmapStep::class,'roadmap_steps_id');
     }
 
     public function reports()

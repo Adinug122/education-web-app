@@ -6,7 +6,7 @@
                  <div class="flex gap-3">
                 <img src="{{ asset('img/4x4.png') }}" alt="logo" class=" bg-white rounded-lg w-10 h-10">
                 <span class="text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-white">
-                    Define
+                    Defind
                 </span>
            
             </div>

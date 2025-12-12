@@ -38,9 +38,7 @@
                     Kembali ke Dashboard
                 </a>
                 
-                <a href="{{ route('roadmap.detail', $roadmap->id) }}" class="px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:shadow-lg transition transform hover:-translate-y-1">
-                    Lihat Materi Lagi
-                </a>
+              
             </div>
 
         </div>

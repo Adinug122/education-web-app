@@ -35,7 +35,7 @@
     </div>
 
  
-    <div class="absolute bottom-6 text-brand-200/50 text-[10px] tracking-widest z-10">
+    <div class="absolute bottom-6 text-brand-200/50 text-sm md:text-[10px] tracking-widest z-10">
         Powered by 404 Ide Not Found
     </div>
 </div>

@@ -50,7 +50,7 @@
             <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-cyan-400 blur-3xl opacity-20"></div>
 
             <div class="relative z-10 flex items-center gap-2">
-                <img src="{{ asset('img/4x4.png') }}" alt="Logo" class="w-10 h-10 rounded-lg bg-white p-0.5">
+                <img src="{{ asset('img/4x4.png') }}" alt="Logo" class="w-10 h-10 rounded-lg bg-blue-600 md:bg-white p-0.5">
                 <span class="text-2xl font-bold tracking-tight">Defind</span>
             </div>
 
@@ -72,7 +72,7 @@
         <div class="w-full lg:w-1/2 flex items-center justify-center p-6 sm:p-12 bg-white relative">
             <div class="w-full max-w-md">
                 <div class="lg:hidden flex items-center gap-2 mb-8 justify-center">
-                    <img src="{{ asset('img/logo.jpg') }}" alt="Logo" class="w-10 h-10 rounded-lg">
+                  <img src="{{ asset('img/4x4.png') }}" alt="DevLev AI Logo" class="w-10 h-10 object-contain">
                     <span class="text-2xl font-bold text-gray-900 tracking-tight">Defind</span>
                 </div>
 

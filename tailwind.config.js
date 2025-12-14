@@ -1,12 +1,13 @@
 import defaultTheme from 'tailwindcss/defaultTheme'
 import colors from 'tailwindcss/colors'
+import forms from '@tailwindcss/forms'
 
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    './resources/views/**/*.blade.php',
-    './resources/views/**/*.php',
-    './resources/views/components/**/*.blade.php',
+    './resources/**/*.blade.php',
+    './resources/**/*.js',
+    './resources/**/*.vue',
     './app/View/Components/**/*.php',
   ],
 
@@ -21,5 +22,5 @@ export default {
     },
   },
 
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [forms],
 }

@@ -1,5 +1,5 @@
 <x-userlayouts>
-<body x-data="{ openDelete: false, deleteId: null }" class="antialiased mt-20 bg-white text-gray-900 bg-grid-pattern relative overflow-x-hidden">
+<div x-data="{ openDelete: false, deleteId: null }" class="antialiased mt-20 bg-white text-gray-900 bg-grid-pattern relative overflow-x-hidden">
 
        <div id="preloader" 
      class="fixed inset-0 z-[9999] opacity-100 flex flex-col items-center justify-center 
@@ -619,7 +619,7 @@
                             </div>
  
 
-</body>
+                        </div>
 
 </x-userlayouts>
 

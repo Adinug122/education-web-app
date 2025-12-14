@@ -6,6 +6,7 @@
     Defind
 </span>
         </div>
+        
         <div class="flex items-center gap-4"> @auth <div class="hidden sm:flex flex-col items-end mr-2"> <span
                     class="text-sm font-bold text-gray-900">{{ Auth::user()->name }}</span> <span
                     class="text-xs text-gray-500">{{ Auth::user()->email }}</span> </div>

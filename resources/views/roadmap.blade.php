@@ -14,7 +14,7 @@
             <div class="flex items-center justify-between mb-6">
                 <h2 class="text-3xl font-bold">{{ $roadmap->title }}</h2>
 
-                <div class="flex gap-2">
+                <div class="flex gap-2 text-xs sm:text-sm md:text-base">
                     <span class="px-3 py-1 text-sm bg-white/20 rounded-full flex items-center gap-1">
                         <img src="{{ asset('img/Clock.svg') }}" class="w-[18px]">  
                         {{ $roadmap->estimasi ?? '-' }}

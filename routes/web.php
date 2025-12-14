@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\landingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoadmapController;
 use App\Http\Controllers\UserController;
@@ -25,7 +26,7 @@ Route::middleware(['role:admin'])->group(function () {
 Route::middleware('auth')->group(function () {
     Route::post('/roadmap/step/{id}/complete', [RoadmapController::class, 'toggleStep'])
         ->name('roadmap.step.complete');
-
+    Route::get('/histroy',[landingController::class])->name('history');
     Route::post('/generate', [RoadmapController::class, 'generate'])->name('generate.roadmap');
     Route::get('/roadmap/{id}', [RoadmapController::class, 'detail'])->name('roadmap.detail');
 

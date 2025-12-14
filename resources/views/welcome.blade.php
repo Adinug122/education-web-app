@@ -71,17 +71,32 @@
                                 <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-2xl opacity-20 group-focus-within:opacity-50 blur transition duration-300">
                                 </div>
                                 <textarea name="prompt" rows="3"
-                                    class="relative block w-full rounded-2xl border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-lg p-6 pr-36 resize-none placeholder:text-gray-400 bg-white"
+                                    class="relative block w-full rounded-2xl border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-sm md:text-lg p-6 pr-36 resize-none placeholder:text-gray-400 bg-white"
                                     placeholder="Contoh: Saya ingin belajar Laravel 10 dari nol sampai bisa membuat website toko online..."></textarea>
 
-                                <button type="submit"
-                                    class="absolute bottom-3 right-3 px-5 py-2.5 bg-gray-900 text-white font-bold rounded-xl hover:bg-blue-600 transition-all shadow-md flex items-center gap-2 group-hover:shadow-lg">
-                                    <span>Generate</span>
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                                    </svg>
-                                </button>
+  <button
+    type="submit"
+    class="
+        w-full sm:w-auto
+        sm:absolute sm:bottom-3 sm:right-3
+        mt-4 sm:mt-0
+        px-5 py-2.5
+        bg-gray-900 text-white font-bold
+        rounded-xl
+        hover:bg-blue-600
+        transition-all
+        shadow-md
+        flex items-center justify-center gap-2
+        group-hover:shadow-lg
+    "
+>
+    <span>Generate</span>
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+    </svg>
+</button>
+
                             </div>
                             <p class="text-xs text-gray-400 mt-3 text-left pl-3 flex items-center gap-1">
                                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -103,7 +118,7 @@
                                 </svg>
                                 Roadmap Saya
                             </h3>
-                            <button class="text-sm text-blue-600 font-semibold hover:underline">Lihat Semua</button>
+                      
                         </div>
 
                         <div  class="relative">
@@ -208,10 +223,10 @@
                             membuatkan kurikulum belajar personal untukmu. Hemat waktu riset, fokus belajar, dan capai target
                             karir lebih cepat. </p>
                         <div class="flex justify-center gap-4"> <a href="{{ route('register') }}"
-                                class="px-8 py-3.5 text-base font-bold text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition shadow-xl shadow-blue-500/20">
+                                class="px-8 py-3.5 text-sm md:text-base font-bold text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition shadow-xl shadow-blue-500/20">
                                 Mulai Gratis Sekarang &rarr; </a>
                             <a href="#how-it-works"
-                                class="px-8 py-4 text-base font-bold text-gray-700 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all shadow-sm hover:shadow-md">
+                                class="px-8 py-4 text-sm md:text-base font-bold text-gray-700 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-all shadow-sm hover:shadow-md">
                                 Pelajari Cara Kerja
                             </a>
                         </div>

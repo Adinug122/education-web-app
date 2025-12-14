@@ -8,7 +8,7 @@
 
     <link rel="icon" href="{{ asset('img/4x4.png') }}" type="image/jpeg">
 
-    <title>{{ config('app.name', 'Defind - Platform Belajar Berbasis AI') }}</title>
+    <title>Defind - Platform Belajar Berbasis AI</title>
    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />

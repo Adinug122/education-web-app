@@ -23,7 +23,7 @@
                 <textarea name="description" id="description" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 px-4 text-gray-700 bg-white"></textarea>
                </div>
               
-<div class="flex gap-3 pt-2">
+<div class="flex gap-3 pt-2 text-sm md:text-base">
         <a href="{{route('roadmap.detail', $resource->step->roadmap_id) }}" class="w-1/2 text-center px-4 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition">
             Batal
         </a>

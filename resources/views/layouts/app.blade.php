@@ -8,7 +8,8 @@
     
     <link rel="icon" href="{{ asset('img/4x4.png') }}" type="image/jpeg">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+      <title>Defind - Platform Belajar Berbasis AI</title>
+
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">

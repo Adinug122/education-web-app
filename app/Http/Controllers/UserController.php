@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-       public function index(){
-        $user = User::all();
-
+       public function index(Request $request){
+        $search = $request->input('search');
+        $user = User::when($search,function($query) use ($search){
+            $query->where('name','like','%'. $search .'%');
+        })->get();
         return view('user',compact('user'));
     }
 
